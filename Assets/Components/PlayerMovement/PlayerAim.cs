@@ -16,7 +16,6 @@ public class PlayerAim : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hit, 100f, layerMask)) // Tambahkan layerMask di sini
         {
             LookDirection = hit.point;
-            Debug.Log("Kursor 2 mengenai: " + hit.collider.name);
         }
         Debug.DrawRay(ray.origin, ray.direction * 100, Color.red);
     }
