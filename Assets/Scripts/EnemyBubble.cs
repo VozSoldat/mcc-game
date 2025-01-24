@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Enemy : AIShooter
+public class EnemyBubble : AIShooter
 {
     public Transform target;
 
