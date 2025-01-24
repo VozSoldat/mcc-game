@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 832636988922016436}
   - component: {fileID: 5404443612535110822}
   - component: {fileID: 2182758864825171824}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Badan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,8 +118,8 @@ GameObject:
   - component: {fileID: 6444434665218227483}
   - component: {fileID: 6868815161813585576}
   - component: {fileID: 1337292461310904416}
-  - component: {fileID: 4687828301668289412}
-  m_Layer: 0
+  - component: {fileID: 3574322590156750409}
+  m_Layer: 7
   m_Name: TestEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -182,9 +182,9 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &4687828301668289412
+--- !u!114 &3574322590156750409
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -193,7 +193,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2378787310514875276}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db050598754efb24da37fba0cb26e288, type: 3}
+  m_Script: {fileID: 11500000, guid: b2b2f15de6855fd43936262ffe49ddb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &4103737431641997639
@@ -208,7 +208,7 @@ GameObject:
   - component: {fileID: 7635632099930515056}
   - component: {fileID: 5745048031075313174}
   - component: {fileID: 3881483756571795972}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Mata
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,7 +11,6 @@ public class MouseCursor : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
             Position = hit.point;
-            Debug.Log("Kursor mengenai: " + hit.collider.name);
         }
 
         Debug.DrawRay(ray.origin, ray.direction * 100, Color.blue);
