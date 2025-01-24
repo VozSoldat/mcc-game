@@ -1,6 +1,9 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class CombatInput: MonoBehaviour{
+public class CombatInput : MonoBehaviour
+{
     private bool basicAttack = false;
     public bool BasicAttack {get => basicAttack; set => basicAttack = value;}
     private void Update(){
@@ -8,10 +11,10 @@ public class CombatInput: MonoBehaviour{
         {
             BasicAttack = true;
         }
-        else{
-            BasicAttack = false;
-        }
+        // else{
+        //     BasicAttack = false;
+        // }
 
-        // Debug.Log("Basic Attack: " + BasicAttack);
+        Debug.Log("Basic Attack: " + BasicAttack);
     }
 }
