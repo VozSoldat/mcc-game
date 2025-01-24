@@ -12,7 +12,7 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        var target = other.gameObject.GetComponent<EntityHit>();
+        var target = other.gameObject.GetComponent<IEntityHit>();
         if (target != null)
         {
             target.ReceiveDamage(this.gameObject);

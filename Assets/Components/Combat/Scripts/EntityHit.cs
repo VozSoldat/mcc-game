@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EntityHit: MonoBehaviour{
+public class PlayerHit: MonoBehaviour, IEntityHit{
     private IEntity property;
 
     private void Start() {
