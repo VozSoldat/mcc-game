@@ -32,13 +32,14 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        var target = other.gameObject.GetComponent<IEntityHit>();
-        if (target != null)
+        var target = other.gameObject.GetComponentInParent<IEntityHit>();
+        Debug.Log("Bullet hit: " + other.gameObject.transform.parent.name);
+        if (target != null && !other.transform.parent.CompareTag(this.spawnerTag))
         {
             target.ReceiveDamage(this.gameObject);
         }
 
-        if (!other.CompareTag(this.spawnerTag) && !other.isTrigger)
+        if (!other.transform.parent.CompareTag(this.spawnerTag) && !other.isTrigger)
         {
             Destroy(this.gameObject);
         }

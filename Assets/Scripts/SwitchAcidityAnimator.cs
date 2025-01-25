@@ -16,8 +16,9 @@ public class SwitchAcidityAnimator : MonoBehaviour
         );
         this.animator = GetComponent<Animator>();
         this.animator.runtimeAnimatorController = this.currentAcidController;
-        this.GetComponentInParent<AcidityController>()
-            .OnAcidityChange.AddListener(this.SwitchAcidityLevel);
+        var parent = this.GetComponentInParent<AcidityController>();
+        parent.OnAcidityChange.AddListener(this.SwitchAcidityLevel);
+        this.SwitchAcidityLevel(parent.AcidityLevel);
     }
 
     public void SwitchAcidityLevel(float acidityLevel)

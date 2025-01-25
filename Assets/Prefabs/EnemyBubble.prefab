@@ -225,6 +225,7 @@ MonoBehaviour:
   OnAcidityChange:
     m_PersistentCalls:
       m_Calls: []
+  acidityLevel: 3
 --- !u!1 &4684765825817617181
 GameObject:
   m_ObjectHideFlags: 0
@@ -372,7 +373,7 @@ GameObject:
   - component: {fileID: 780490532870251527}
   m_Layer: 7
   m_Name: Body
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

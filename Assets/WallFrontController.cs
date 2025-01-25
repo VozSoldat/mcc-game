@@ -36,9 +36,6 @@ public class WallFrontController : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(mainCamera.transform.position, rayDirection, out hit, distance))
         {
-            Debug.Log(
-                "Hit object: " + hit.collider.gameObject.name + " " + hit.collider.gameObject.tag
-            );
             // Check if the hit object has the "WallFront" tag
             if (hit.collider.CompareTag("WallFront"))
             {
