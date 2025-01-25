@@ -38,7 +38,7 @@ public class Bullet : MonoBehaviour
             target.ReceiveDamage(this.gameObject);
         }
 
-        if (!other.CompareTag(this.spawnerTag))
+        if (!other.CompareTag(this.spawnerTag) && !other.isTrigger)
         {
             Destroy(this.gameObject);
         }

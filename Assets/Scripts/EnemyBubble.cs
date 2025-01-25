@@ -83,7 +83,6 @@ public class EnemyBubble : AIShooter
             bulletSpeed * (this.tc.target.position - transform.position).normalized;
 
         StartCoroutine(ShootCooldown());
-        Debug.Log("Shooting bullet");
     }
 
     IEnumerator ShootCooldown()
