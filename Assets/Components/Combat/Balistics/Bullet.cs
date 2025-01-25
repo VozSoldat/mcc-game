@@ -44,4 +44,3 @@ public class Bullet : MonoBehaviour
         }
     }
 }
-

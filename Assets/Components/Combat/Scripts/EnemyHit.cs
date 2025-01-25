@@ -12,6 +12,6 @@ public class EnemyHit : MonoBehaviour, IEntityHit{
     }
     public void ReceiveDamage(GameObject bullet)
     {
-        property.AcidHealth += bullet.GetComponent<Bullet>().AcidDamage;
+        property.Acidity += bullet.GetComponent<Bullet>().AcidDamage;
     }
 }

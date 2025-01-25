@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 1337292461310904416}
   - component: {fileID: 3574322590156750409}
   m_Layer: 7
-  m_Name: TestEnemy
+  m_Name: TestEnemyAcid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 100
-  acidHealth: 0
+  acidity: 7
 --- !u!54 &1337292461310904416
 Rigidbody:
   m_ObjectHideFlags: 0
