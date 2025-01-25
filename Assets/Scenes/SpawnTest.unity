@@ -299,6 +299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentWave: 0
+  spawnDelay: 3
 --- !u!114 &165671469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1945,6 +1946,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1085900949}
     m_Modifications:
+    - target: {fileID: 1662497518022005115, guid: b60f9bf71de981040b2cf1febff94156, type: 3}
+      propertyPath: movementSpeed
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 2703174136765040644, guid: b60f9bf71de981040b2cf1febff94156, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.83

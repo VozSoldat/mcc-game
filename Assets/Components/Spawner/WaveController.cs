@@ -15,6 +15,7 @@ public class WaveController : MonoBehaviour
         {
             // currentWave++;
             StartCoroutine(DelayWaveChange());
+            currentWave++;
 
         }
     }
@@ -27,7 +28,6 @@ public class WaveController : MonoBehaviour
     {
         yield return new WaitForSeconds(spawnDelay);
 
-        currentWave++;
 
     }
 }
