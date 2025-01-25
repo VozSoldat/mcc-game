@@ -7,6 +7,10 @@ public class BulletLaunch : MonoBehaviour
     private CombatInput combatInput;
     private Vector3 aimedPosition;
 
+    
+
+    
+
     private void Start()
     {
         combatInput = GetComponent<CombatInput>();
@@ -14,7 +18,11 @@ public class BulletLaunch : MonoBehaviour
 
     private void Update()
     {
-        aimedPosition = GetComponent<PlayerAim>().LookDirection;
+        // aimedPosition = GetComponent<PlayerAim>().LookDirection;
+
+        
+
+
     }
 
     private void FixedUpdate()
@@ -34,13 +42,22 @@ public class BulletLaunch : MonoBehaviour
             return;
         }
 
+        Vector3 worldPosition = transform.position;
+        Vector3 screenPosition = Camera.main.WorldToScreenPoint(worldPosition);
+        
+
+        float angle = Mathf.Atan2(Input.mousePosition.y-screenPosition.y, screenPosition.x - Input.mousePosition.x) * Mathf.Rad2Deg -90;
+
+        Vector3 direction = Quaternion.Euler(0, angle, 0) * Vector3.forward;
+
+
         GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
         Bullet bulletComponent = bullet.GetComponent<Bullet>();
         bulletComponent.spawnerTag = this.gameObject.tag;
 
         float bulletSpeed = bulletComponent.Speed;
         bullet.GetComponent<Rigidbody>().velocity =
-            bulletSpeed * (aimedPosition - transform.position).normalized;
+            bulletSpeed * direction;
     }
 }
 
