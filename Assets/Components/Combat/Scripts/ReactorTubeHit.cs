@@ -4,15 +4,21 @@ public class ReactorTubeHit : MonoBehaviour, IEntityHit
 {
     private ReactorTube property;
 
-    private void Start() {
+    private void Start()
+    {
         property = GetComponent<ReactorTube>();
-        if (property == null) 
+        if (property == null)
         {
             Debug.LogError("reactor not found on: " + gameObject.name);
         }
     }
+
     public void ReceiveDamage(GameObject bullet)
     {
+        if (bullet.GetComponent<Bullet>().spawnerTag.Equals("Player"))
+        {
+            return;
+        }
         property.Health -= bullet.GetComponent<Bullet>().PhysicalDamage;
         Debug.Log("Health: " + property.Health);
         if (property.Health <= 0)
@@ -20,9 +26,12 @@ public class ReactorTubeHit : MonoBehaviour, IEntityHit
             Die();
         }
     }
-    private void Die(){
+
+    private void Die()
+    {
         Debug.Log(gameObject.name + " mati");
         // Destroy(gameObject);
         gameObject.SetActive(false);
     }
 }
+
