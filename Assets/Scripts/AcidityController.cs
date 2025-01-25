@@ -7,7 +7,8 @@ public class AcidityController : MonoBehaviour
 {
     public UnityEvent<float> OnAcidityChange = new UnityEvent<float>();
 
-    private float acidityLevel = 0;
+    [SerializeField]
+    float acidityLevel = 0;
     public float AcidityLevel
     {
         get => this.acidityLevel;
@@ -22,5 +23,8 @@ public class AcidityController : MonoBehaviour
     void Start() { }
 
     // Update is called once per frame
-    void Update() { }
+    void Update()
+    {
+        // this.OnAcidityChange.Invoke(this.acidityLevel);
+    }
 }

@@ -117,6 +117,8 @@ GameObject:
   - component: {fileID: 3927999821899391430}
   - component: {fileID: 468276178534547119}
   - component: {fileID: 4869469030978068430}
+  - component: {fileID: 14255185856821783}
+  - component: {fileID: 1678572853537462960}
   m_Layer: 6
   m_Name: Sprite
   m_TagString: Player
@@ -213,7 +215,7 @@ Animator:
   m_GameObject: {fileID: 4552711045229049631}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ed33338396818344f89293af442be611, type: 2}
+  m_Controller: {fileID: 22100000, guid: 343e385faedfa944687893a198a8f304, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -224,6 +226,31 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &14255185856821783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4552711045229049631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da85ce260f75ecf4a81ca2f709a8fd22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1678572853537462960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4552711045229049631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e0eb92e557764c4fba5a3268483f18a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  basicAcidController: {fileID: 22100000, guid: 343e385faedfa944687893a198a8f304, type: 2}
 --- !u!1 &5003168220099456613
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,6 +375,7 @@ GameObject:
   - component: {fileID: 7563737471205846982}
   - component: {fileID: 8263594389872793084}
   - component: {fileID: 4422377146926423615}
+  - component: {fileID: 1035831067119828963}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -491,3 +519,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &1035831067119828963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5666681156158389256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b38ad35a110b7242acf26f3d67122da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnAcidityChange:
+    m_PersistentCalls:
+      m_Calls: []
+  acidityLevel: 0
