@@ -29,6 +29,16 @@ public class EnemyBubble : AIShooter
         this.agent = GetComponent<NavMeshAgent>();
         this.tc = GetComponent<TargetController>();
         this.rb = GetComponent<Rigidbody>();
+        GetComponent<AcidityController>()
+            .OnAcidityChange.AddListener(
+                delegate(float acidityLevel)
+                {
+                    if (acidityLevel <= -7 || acidityLevel >= 7)
+                    {
+                        DestroySelf();
+                    }
+                }
+            );
     }
 
     // Update is called once per frame
@@ -105,5 +115,10 @@ public class EnemyBubble : AIShooter
         {
             this.isTargetInShootRange = false;
         }
+    }
+
+    void DestroySelf()
+    {
+        Destroy(this.gameObject);
     }
 }
