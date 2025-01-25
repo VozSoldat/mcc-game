@@ -29,6 +29,7 @@ public class EnemyBubble : AIShooter
         this.agent = GetComponent<NavMeshAgent>();
         this.tc = GetComponent<TargetController>();
         this.rb = GetComponent<Rigidbody>();
+        this.tc.target = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<Transform>();
     }
 
     // Update is called once per frame
