@@ -15,6 +15,6 @@ public class CombatInput : MonoBehaviour
         //     BasicAttack = false;
         // }
 
-        Debug.Log("Basic Attack: " + BasicAttack);
+        // Debug.Log("Basic Attack: " + BasicAttack);
     }
 }

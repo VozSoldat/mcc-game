@@ -13,5 +13,15 @@ public class EnemyHit : MonoBehaviour, IEntityHit{
     public void ReceiveDamage(GameObject bullet)
     {
         property.Acidity += bullet.GetComponent<Bullet>().AcidDamage;
+
+        if (property.Acidity == 0)
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        Destroy(gameObject);
     }
 }
