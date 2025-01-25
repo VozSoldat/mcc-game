@@ -11,7 +11,6 @@ public class SpawnManager : MonoBehaviour
     public GameObject[] EnemyPrefabs => enemyPrefabs;
     private int oldWave = 0;
     public int Wave => oldWave;
-    public int[] waveEnemyNumber;
 
     private void Awake()
     {

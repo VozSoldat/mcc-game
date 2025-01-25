@@ -14,7 +14,7 @@ public class MovementInput : MonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
-        inputDirection = new Vector3(vertical, 0, horizontal).normalized;
+        inputDirection = new Vector3(horizontal, 0, vertical).normalized;
     }
 }
 

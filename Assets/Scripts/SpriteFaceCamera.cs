@@ -9,6 +9,6 @@ public class SpriteFaceCamera : MonoBehaviour
     void Update()
     {
         var mainCameraEuler = Camera.main.transform.eulerAngles;
-        this.transform.eulerAngles = new Vector3(-mainCameraEuler.x, -mainCameraEuler.y, 0);
+        this.transform.eulerAngles = new Vector3(-mainCameraEuler.x, mainCameraEuler.y+180, 0);
     }
 }
