@@ -20,7 +20,7 @@ public class ReactorTubeHit : MonoBehaviour, IEntityHit
             return;
         }
         property.Health -= bullet.GetComponent<Bullet>().PhysicalDamage;
-        Debug.Log("Health: " + property.Health);
+        // Debug.Log("Health: " + property.Health);
         if (property.Health <= 0)
         {
             Die();

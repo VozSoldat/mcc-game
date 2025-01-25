@@ -1,0 +1,12 @@
+*.prefab
+*.json
+*.asset
+*.meta
+*.controller
+*.anim
+*.unity
+*.overrideController
+*.mat
+*.shader
+*.txt
+*.svg

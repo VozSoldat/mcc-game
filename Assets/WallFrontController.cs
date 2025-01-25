@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class WallFrontController : MonoBehaviour
 {
+    public LayerMask layerMask;
+
     Player player;
     Camera mainCamera;
     GameObject lastWall;
@@ -34,38 +36,67 @@ public class WallFrontController : MonoBehaviour
 
         // Cast a ray from the camera to the player
         RaycastHit hit;
-        if (Physics.Raycast(mainCamera.transform.position, rayDirection, out hit, distance))
+        if (
+            Physics.Raycast(
+                mainCamera.transform.position,
+                rayDirection,
+                out hit,
+                distance,
+                this.layerMask
+            )
+        )
         {
+            // Debug.Log(hit.collider.gameObject.name);
             // Check if the hit object has the "WallFront" tag
             if (hit.collider.CompareTag("WallFront"))
             {
                 // Disable the MeshRenderer of the wall
-                MeshRenderer wallRenderer = hit.collider.GetComponent<MeshRenderer>();
-                if (wallRenderer != null)
+                // MeshRenderer wallRenderer = hit.collider.GetComponent<MeshRenderer>();
+                ToggleMeshRenderer meshRenderer = hit.collider.GetComponent<ToggleMeshRenderer>();
+                if (meshRenderer == null)
                 {
-                    wallRenderer.enabled = false;
-                    lastWall = hit.collider.gameObject; // Store the last wall
+                    meshRenderer = hit.collider.GetComponentInParent<ToggleMeshRenderer>();
                 }
+                if (meshRenderer != null)
+                {
+                    meshRenderer.Deactivate();
+                    lastWall = meshRenderer.gameObject; // Store the last wall
+                }
+                // if (wallRenderer != null)
+                // {
+                //     wallRenderer.enabled = false;
+                //     lastWall = hit.collider.gameObject; // Store the last wall
+                // }
             }
             else if (lastWall != null)
             {
                 // Re-enable the MeshRenderer of the last wall if it's no longer in the way
-                MeshRenderer lastWallRenderer = lastWall.GetComponent<MeshRenderer>();
-                if (lastWallRenderer != null)
+                // MeshRenderer lastWallRenderer = lastWall.GetComponent<MeshRenderer>();
+                ToggleMeshRenderer meshRenderer = lastWall.GetComponent<ToggleMeshRenderer>();
+                if (meshRenderer != null)
                 {
-                    lastWallRenderer.enabled = true;
+                    meshRenderer.Activate();
                 }
+                // if (lastWallRenderer != null)
+                // {
+                //     lastWallRenderer.enabled = true;
+                // }
                 lastWall = null; // Reset the last wall
             }
         }
         else if (lastWall != null)
         {
-            // Re-enable the MeshRenderer of the last wall if nothing is hit
-            MeshRenderer lastWallRenderer = lastWall.GetComponent<MeshRenderer>();
-            if (lastWallRenderer != null)
+            // Re-enable the MeshRenderer of the last wall if it's no longer in the way
+            // MeshRenderer lastWallRenderer = lastWall.GetComponent<MeshRenderer>();
+            ToggleMeshRenderer meshRenderer = lastWall.GetComponent<ToggleMeshRenderer>();
+            if (meshRenderer != null)
             {
-                lastWallRenderer.enabled = true;
+                meshRenderer.Activate();
             }
+            // if (lastWallRenderer != null)
+            // {
+            //     lastWallRenderer.enabled = true;
+            // }
             lastWall = null; // Reset the last wall
         }
     }

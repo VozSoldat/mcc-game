@@ -170,8 +170,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 5305870008657152947, guid: 0c62ae5e614791b4c91106e70bb3ec51, type: 3}
+  basicBulletPrefab: {fileID: 5305870008657152947, guid: a4ecef73dd82fec4ea9ee35b572f15d3, type: 3}
   front: {x: 0, y: 0, z: 0}
   cooldown: 1
+  shouldChasePlayer: 0
+  isPlayerInRange: 0
+  wasAttackedByPlayer: 0
 --- !u!114 &6178099186882606317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,6 +213,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8fc82da85a525d4da5b6471b014c20c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  primaryTarget: {fileID: 0}
+  secondaryTarget: {fileID: 0}
   target: {fileID: 0}
 --- !u!114 &2218153339095838632
 MonoBehaviour:
@@ -239,6 +245,7 @@ GameObject:
   - component: {fileID: 2786821813419533954}
   - component: {fileID: 7982419821678489003}
   - component: {fileID: 2453988067187699939}
+  - component: {fileID: 1780195891264032604}
   m_Layer: 7
   m_Name: Sprite
   m_TagString: Untagged
@@ -335,7 +342,7 @@ Animator:
   m_GameObject: {fileID: 4684765825817617181}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6e82df2ec0d9fb94390426242e98b38b, type: 2}
+  m_Controller: {fileID: 22100000, guid: aa66c040999ce904fb5d9bccb424c40b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -359,6 +366,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   basicAcidController: {fileID: 22100000, guid: aa66c040999ce904fb5d9bccb424c40b, type: 2}
+--- !u!114 &1780195891264032604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4684765825817617181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5ccf82e433f8b74ab9fb368d0ede0ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4813991223101206527
 GameObject:
   m_ObjectHideFlags: 0

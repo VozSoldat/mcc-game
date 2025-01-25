@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Daffa-World.unity
+    guid: e8791ae0d6b763daa80d2e5e661de8a0
   m_configObjects: {}

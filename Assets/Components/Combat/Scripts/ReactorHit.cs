@@ -21,7 +21,7 @@ public class ReactorHit : MonoBehaviour, IEntityHit
         }
 
         property.Acidity += bullet.GetComponent<Bullet>().AcidDamage;
-        Debug.Log("Acidity: " + property.Acidity);
+        // Debug.Log("Acidity: " + property.Acidity);
 
         if (property.Acidity < -6 || property.Acidity > 6)
         {
@@ -29,4 +29,3 @@ public class ReactorHit : MonoBehaviour, IEntityHit
         }
     }
 }
-

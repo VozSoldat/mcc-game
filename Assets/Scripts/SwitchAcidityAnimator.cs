@@ -27,7 +27,7 @@ public class SwitchAcidityAnimator : MonoBehaviour
         {
             this.animator.runtimeAnimatorController = this.basicAcidController;
         }
-        else
+        else if (acidityLevel > 0)
         {
             this.animator.runtimeAnimatorController = this.currentAcidController;
         }
