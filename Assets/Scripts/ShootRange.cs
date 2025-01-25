@@ -5,6 +5,7 @@ using UnityEngine;
 public class ShootRange : MonoBehaviour
 {
     AIShooter parent;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -12,10 +13,7 @@ public class ShootRange : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    void Update() { }
 
     void OnTriggerEnter(Collider other)
     {
