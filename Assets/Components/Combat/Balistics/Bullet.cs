@@ -32,7 +32,7 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        var target = other.gameObject.GetComponent<IEntityHit>();
+        var target = other.gameObject.GetComponentInParent<IEntityHit>();
         if (target != null)
         {
             target.ReceiveDamage(this.gameObject);

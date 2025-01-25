@@ -39,7 +39,7 @@ public class EnemyBubble : AIShooter
                     }
                 }
             );
-        this.tc.target = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<Transform>();
+        this.tc.target = GameObject.FindGameObjectsWithTag("Reactor")[0].GetComponent<Transform>();
     }
 
     // Update is called once per frame

@@ -225,6 +225,7 @@ MonoBehaviour:
   OnAcidityChange:
     m_PersistentCalls:
       m_Calls: []
+  acidityLevel: 0
 --- !u!1 &4684765825817617181
 GameObject:
   m_ObjectHideFlags: 0

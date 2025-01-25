@@ -15,5 +15,10 @@ public class ReactorHit : MonoBehaviour, IEntityHit
     {
         property.Acidity += bullet.GetComponent<Bullet>().AcidDamage;
         Debug.Log("Acidity: " + property.Acidity);
+        
+        if (property.Acidity < -6 || property.Acidity > 6)
+        {
+            gameObject.SetActive(false);
+        }
     }
 }

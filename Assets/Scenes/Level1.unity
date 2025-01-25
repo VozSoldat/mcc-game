@@ -966,6 +966,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 120946038}
     m_Modifications:
+    - target: {fileID: 1576585868477960833, guid: 2c4e004805d4d8b44a8208c9ed5bb8d4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1576585868477960833, guid: 2c4e004805d4d8b44a8208c9ed5bb8d4, type: 3}
+      propertyPath: m_TagString
+      value: Reactor
+      objectReference: {fileID: 0}
     - target: {fileID: 2588028489110719100, guid: 2c4e004805d4d8b44a8208c9ed5bb8d4, type: 3}
       propertyPath: m_Name
       value: MalangChemicalCenterNew
