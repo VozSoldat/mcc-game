@@ -10,10 +10,10 @@ public class PauseController : MonoBehaviour
     private void Start()
     {
         _pauseMenu = gameObject;
-        _pauseMenu.SetActive(true);
+        _pauseMenu.SetActive(false);
     }
 
-    private void ShowPauseMenu()
+    public void ShowPauseMenu()
     {
         Time.timeScale = 0f;
         _pauseMenu.SetActive(true);
@@ -21,14 +21,12 @@ public class PauseController : MonoBehaviour
 
     public void OnResumeButtonClicked()
     {
-        Debug.Log("Resume button clicked");
         Time.timeScale = 1f;
         _pauseMenu.SetActive(false);
     }
 
     public void OnRestartClicked()
     {
-        Debug.Log("Restart button clicked");
         Time.timeScale = 1f;
         var currentLevel = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
         UnityEngine.SceneManagement.SceneManager.LoadScene(currentLevel.name);
@@ -37,6 +35,6 @@ public class PauseController : MonoBehaviour
     public void OnQuitClicked()
     {
         Time.timeScale = 1f;
-        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
 }

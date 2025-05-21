@@ -13,6 +13,8 @@ public class Player : MonoBehaviour, IEntity
     private bool isDead = false;
     private int health;
 
+    PauseController _pause;
+
     public int Health
     {
         get => health;
@@ -46,7 +48,7 @@ public class Player : MonoBehaviour, IEntity
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Q))
-        acidityController.AcidityLevel = -acidityController.AcidityLevel;
+            acidityController.AcidityLevel = -acidityController.AcidityLevel;          
     }
 
     private void Die()

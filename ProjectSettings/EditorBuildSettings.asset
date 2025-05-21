@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 3d4a7b87282b34e778c71f487bdbbf86
+  - enabled: 1
     path: Assets/Scenes/Daffa-World.unity
     guid: e8791ae0d6b763daa80d2e5e661de8a0
   m_configObjects: {}
