@@ -2,23 +2,30 @@ using UnityEngine;
 
 public class PlayerHP : MonoBehaviour
 {
-    Player player;
-    float maxWidth;
-    RectTransform rectRemaining;
+    [SerializeField] private Player player;
+    private float maxWidth;
+    private RectTransform rectRemaining;
+
+    void Awake()
+    {
+        rectRemaining = transform.Find("Remaining").GetComponent<RectTransform>();
+        maxWidth = rectRemaining.sizeDelta.x;
+    }
 
     void Start()
     {
-        this.player = GameObject.Find("Player").GetComponent<Player>();
-        this.player.OnHealthChange.AddListener(this.ChangeHP);
-        this.rectRemaining = this.transform.Find("Remaining").GetComponent<RectTransform>();
-        this.maxWidth = this.rectRemaining.sizeDelta.x;
+        if (player == null)
+            Debug.LogError("Player reference is missing in PlayerHP!");
+
+        player.OnHealthChange.AddListener(ChangeHP);
     }
 
     void ChangeHP(int hp)
     {
-        this.rectRemaining.sizeDelta = new Vector2(
-            this.maxWidth * ((float)hp / (float)this.player.maxHealth),
-            this.rectRemaining.sizeDelta.y
+        rectRemaining.sizeDelta = new Vector2(
+            maxWidth * ((float)hp / player.maxHealth),
+            rectRemaining.sizeDelta.y
         );
     }
 }
+

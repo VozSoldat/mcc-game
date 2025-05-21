@@ -1,17 +1,34 @@
-using System;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class Player : MonoBehaviour, IEntity
 {
-    [SerializeField]
-    private float movementSpeed = 100;
-
-    [SerializeField]
-    private int health = 100;
-    public int maxHealth;
-
+    [SerializeField] private float movementSpeed = 100;
+    [SerializeField] public int maxHealth = 100;
     AcidityController acidityController;
+
+    public UnityEvent<int> OnHealthChange = new();
+    public UnityEvent OnDeath = new();
+
+    private bool isDead = false;
+    private int health;
+
+    public int Health
+    {
+        get => health;
+        set
+        {
+            if (isDead)
+                return;
+
+            health = Mathf.Clamp(value, 0, maxHealth);
+            OnHealthChange.Invoke(health);
+
+
+            if (health <= 0)
+                Die();
+        }
+    }
 
     public float MovementSpeed
     {
@@ -19,21 +36,9 @@ public class Player : MonoBehaviour, IEntity
         set => movementSpeed = value;
     }
 
-    public int Health
-    {
-        get => health;
-        set
-        {
-            health = Math.Clamp(value, 0, 100);
-            this.OnHealthChange.Invoke(this.Health);
-        }
-    }
-
-    public UnityEvent<int> OnHealthChange = new UnityEvent<int>();
-
     void Start()
     {
-        maxHealth = health;
+        health = maxHealth;
         acidityController = GetComponent<AcidityController>();
         acidityController.AcidityLevel = 1;
     }
@@ -41,7 +46,22 @@ public class Player : MonoBehaviour, IEntity
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Q))
-            acidityController.AcidityLevel = -acidityController.AcidityLevel;
-        // this.OnHealthChange.Invoke(this.Health);
+        acidityController.AcidityLevel = -acidityController.AcidityLevel;
+    }
+
+    private void Die()
+    {
+        isDead = true;
+        OnDeath.Invoke();
+        Transform[] children = GetComponentsInChildren<Transform>();
+        foreach (Transform child in children)
+        {
+            if (child != transform)
+            {
+                child.gameObject.SetActive(false);
+            }
+        }
+        enabled = false;
     }
 }
+
