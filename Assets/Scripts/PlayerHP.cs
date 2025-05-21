@@ -8,7 +8,7 @@ public class PlayerHP : MonoBehaviour
 
     void Awake()
     {
-        rectRemaining = transform.Find("Remaining").GetComponent<RectTransform>();
+        rectRemaining = transform.Find("Full").GetChild(0).GetComponent<RectTransform>();
         maxWidth = rectRemaining.sizeDelta.x;
     }
 
@@ -28,4 +28,3 @@ public class PlayerHP : MonoBehaviour
         );
     }
 }
-
