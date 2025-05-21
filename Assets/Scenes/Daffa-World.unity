@@ -998,7 +998,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.29165182, g: 0.32918552, b: 0.5471698, a: 1}
+  m_Color: {r: 0.3270737, g: 0.37757435, b: 0.6603774, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -2063,7 +2063,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0, b: 0.02745098, a: 0}
+  m_BackGroundColor: {r: 0.0046279836, g: 0.0046279836, b: 0.0754717, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -4522,7 +4522,7 @@ GameObject:
   - component: {fileID: 2516035286337817872}
   - component: {fileID: 2999696898789726123}
   m_Layer: 10
-  m_Name: Wakatta(1)
+  m_Name: World
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5855,7 +5855,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 6349497404779363362, guid: 2be38c5b488d62a4e824285db42a50b5, type: 3}
 --- !u!1 &5827060878391929378
@@ -5957,7 +5957,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 1568016432510859342, guid: 2be38c5b488d62a4e824285db42a50b5, type: 3}
 --- !u!1 &6013473160343357860
@@ -7213,7 +7213,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 5665763164275481281, guid: 2be38c5b488d62a4e824285db42a50b5, type: 3}
 --- !u!4 &7438755813379134585
